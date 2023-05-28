@@ -71,16 +71,16 @@ class extract:
         results = [x for i, x in enumerate(results) if x not in results[:i]]
 
         # 初步筛选结果
+        new_results = []
         for index, result in enumerate(results):
             if index < len(results)-1:
-                dist = distance.levenshtein(
-                    "".join(result), "".join(results[index+1]))
-                if dist < 6:
-                    results[index] = results[index+1]
+                dist = len("".join(results[index+1]))- len("".join(result))
+                if dist < 0:
+                    new_results.append(result)
 
         # 将结果保存为json
         name_without_extension = os.path.splitext(os.path.basename(video_path))[0]
         directory = os.path.dirname(video_path)
         full_path = os.path.join(directory, name_without_extension)
         with open(f'{full_path}.json', 'w') as json_file:
-            json.dump(results, json_file, ensure_ascii=False)
+            json.dump(new_results, json_file, ensure_ascii=False)
