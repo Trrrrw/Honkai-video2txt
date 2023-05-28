@@ -1,11 +1,18 @@
 # 崩坏3文本提取
+代码有种Chat-GPT的美😋
 
 ## 使用方法
 ### 下载
 ```bash
-git clone https://github.com/Trrrrw/bh3video2txt.git
+git clone https://github.com/Trrrrw/Honkai-video2txt.git
 ```
 或下载压缩包解压
+
+### 环境
+Python（编写环境为3.10）
+```bash
+pip install -r requirements.txt
+```
 
 ### 使用
 用文本编辑器打开`start.py`，修改

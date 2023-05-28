@@ -1,0 +1,5 @@
+asyncio
+opencv-python==4.5.5.64
+distance
+easyocr
+distance
